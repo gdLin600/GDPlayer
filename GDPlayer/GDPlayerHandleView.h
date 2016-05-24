@@ -14,4 +14,7 @@
 
 - (instancetype)initWithPlayer:(GDPlayer *)player;
 
+
+- (void)gd_updatePlayTimeSeconds:(CGFloat)seconds;
+
 @end

@@ -15,9 +15,6 @@
 @property (nonatomic, weak) GDPlayerHandleView *handleView;
 @property (nonatomic, strong) GDPlayer *player;
 
-
-
-
 @end
 @implementation GDPlayerView
 
@@ -32,7 +29,44 @@
     self.player = player;
     self.handleView.player = player;
     self.playerProgress = player.playerProgress;
+    
+    //    [self addGestureRecognizers];
+    
 }
+
+- (void)addGestureRecognizers{
+    UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftOrRightSwipe:)];
+    [leftSwipe setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self addGestureRecognizer:leftSwipe];
+    
+    UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftOrRightSwipe:)];
+    [rightSwipe setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self addGestureRecognizer:rightSwipe];
+    
+    UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(upOrDownSwipe:)];
+    [upSwipe setDirection:UISwipeGestureRecognizerDirectionUp];
+    [self addGestureRecognizer:upSwipe];
+    
+    UISwipeGestureRecognizer *downSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(upOrDownSwipe:)];
+    [downSwipe setDirection:UISwipeGestureRecognizerDirectionDown];
+    [self addGestureRecognizer:downSwipe];
+}
+
+/**
+ UISwipeGestureRecognizerDirectionRight = 1 << 0,右 ==1
+ UISwipeGestureRecognizerDirectionLeft  = 1 << 1,左 ==2
+ UISwipeGestureRecognizerDirectionUp    = 1 << 2,上 ==4
+ UISwipeGestureRecognizerDirectionDown  = 1 << 3,下 ==8
+ */
+- (void)leftOrRightSwipe:(UISwipeGestureRecognizer *)swipe{
+    GDLog(@"21212");
+}
+
+- (void)upOrDownSwipe:(UISwipeGestureRecognizer *)swipe{
+    
+}
+
+
 
 - (void)setPlayerProgress:(PlayerProgress)playerProgress{
     _playerProgress = playerProgress;
@@ -44,10 +78,11 @@
         GDPlayerHandleView *handleView = [[GDPlayerHandleView alloc] initWithPlayer:self.player];
         self.handleView = handleView;
         [self addSubview:self.handleView];
-        
     }
     return self;
 }
+
+
 
 
 
@@ -60,6 +95,28 @@
         make.height.mas_equalTo(44);
     }];
 }
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    CGPoint previousLocation = [[[touches allObjects] lastObject] previousLocationInView:self];
+    CGPoint currentLocation = [[[touches allObjects] lastObject] locationInView:self];
+    [self.handleView gd_updatePlayTimeSeconds:(currentLocation.x - previousLocation.x)];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -143,8 +143,6 @@
     }
 }
 
-
-
 - (void)gd_seekToTime:(CGFloat)seconds{
     [self gd_pause];
     seconds = MAX(0, seconds);
@@ -166,5 +164,6 @@
 - (void)gd_seekToProgress:(CGFloat)progress {
     [self gd_seekToTime:progress * _duration];
 }
+
 
 @end

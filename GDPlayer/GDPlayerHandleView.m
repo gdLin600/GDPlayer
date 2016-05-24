@@ -188,6 +188,17 @@
     [self.player gd_seekToProgress:slider.value];
 }
 
+- (void)gd_updatePlayTimeSeconds:(CGFloat)seconds {
+    //    CGFloat max = MAX(0, self.player.duration + seconds);
+    //    CGFloat min = MIN(max, self.player.duration);
+    [self.player gd_pause];
+    self.playSlider.value = (seconds +  self.playSlider.value * self.player.duration) / self.player.duration;
+    if (self.playSlider.value == 0.0 || self.playSlider.value == 1.0) {
+        return;
+    }
+    [self playSliderChangeEnd:self.playSlider];
+}
+
 
 
 

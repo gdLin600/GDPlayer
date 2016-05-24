@@ -32,7 +32,7 @@
     [self.view addSubview:v];
     
     v.frame = self.view.bounds;
-    NSURL *url = [NSURL URLWithString:@"http://devimages.apple.com/iphone/samples/bipbop/gear1/prog_index.m3u8"];
+    NSURL *url = [NSURL URLWithString:@"http://baobab.wdjcdn.com/14571455324031.mp4"];//[NSURL URLWithString:@"http://devimages.apple.com/iphone/samples/bipbop/gear1/prog_index.m3u8"];
     [v gd_playerWithUrl:url];
     
     
