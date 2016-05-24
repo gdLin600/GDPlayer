@@ -11,7 +11,10 @@
 
 @interface GDPlayer : NSObject
 
-@property (nonatomic, assign) GDPlayerState playerState;
+@property (nonatomic, assign, readonly) GDPlayerState playerState;
+
+@property (nonatomic, assign ,readonly) CGFloat duration;//总时长
+
 
 @property (nonatomic, copy) PlayerProgress playerProgress;
 
@@ -41,7 +44,8 @@
  */
 - (void)gd_pause;
 
+- (void)gd_seekToProgress:(CGFloat)progress;
 
-
+- (void)gd_seekToTime:(CGFloat)seconds;
 
 @end

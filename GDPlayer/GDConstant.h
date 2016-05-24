@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger,GDPlayerState) {
     GDPlayerStatePause     = 4
 };
 
-typedef void(^PlayerProgress)(NSInteger duration);
+typedef void(^PlayerProgress)(CGFloat duration, CGFloat currentTime, CGFloat loadedProgress , GDPlayerState playerState);
 
 
 /** playerHandleView 中控件的左间距*/

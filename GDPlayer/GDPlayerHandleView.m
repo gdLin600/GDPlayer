@@ -11,6 +11,7 @@
 #import "GDConstant.h"
 #import "GDDefine.h"
 @interface GDPlayerHandleView()
+
 /** 播放暂停*/
 @property (nonatomic, weak) UIButton       *playPauseBtn;
 /** 当前时间*/
@@ -46,9 +47,11 @@
 
 - (void)setPlayer:(GDPlayer *)player{
     _player = player;
-    player.playerProgress = ^(NSInteger duration){
-        [self.durationTimeLb setText:[NSString stringWithFormat:@"%zd",duration]];
-        GDLog(@"%zd",duration);
+    player.playerProgress = ^(CGFloat duration, CGFloat currentTime, CGFloat loadedProgress, GDPlayerState playerState){
+        [self.durationTimeLb setText:[NSString stringWithFormat:@"%.0f",duration]];
+        [self.bufferPro setProgress:loadedProgress];
+        [self.playSlider setValue:currentTime/duration animated:YES];
+        [self.currentTimeLb setText:[NSString stringWithFormat:@"%.0f",currentTime]];
     };
 }
 
@@ -65,6 +68,8 @@
     [self addSubview:self.playPauseBtn];
     
     UILabel *currentTimeLb = [[UILabel alloc] init];
+    [currentTimeLb setTextColor:[UIColor whiteColor]];
+    [currentTimeLb setTextAlignment:NSTextAlignmentCenter];
     [currentTimeLb setText:@"2121212"];
     [currentTimeLb setFont:[UIFont systemFontOfSize:11]];
     self.currentTimeLb = currentTimeLb;
@@ -91,10 +96,17 @@
     [_playSlider addTarget:self action:@selector(playSliderChangeEnd:) forControlEvents:UIControlEventTouchUpInside];  //松手,滑块拖动停止
     [_playSlider addTarget:self action:@selector(playSliderChangeEnd:) forControlEvents:UIControlEventTouchUpOutside];
     [_playSlider addTarget:self action:@selector(playSliderChangeEnd:) forControlEvents:UIControlEventTouchCancel];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPlaySlider:)];
+    [_playSlider addGestureRecognizer:tap];
+    
+    [_playSlider setUserInteractionEnabled:YES];
+    
     [self addSubview:_playSlider];
     
     
     UILabel *durationTimeLb = [[UILabel alloc] init];
+    [durationTimeLb setTextColor:[UIColor whiteColor]];
+    [durationTimeLb setTextAlignment:NSTextAlignmentCenter];
     [durationTimeLb setText:@"2121212"];
     [durationTimeLb setFont:[UIFont systemFontOfSize:11]];
     self.durationTimeLb = durationTimeLb;
@@ -123,6 +135,7 @@
     [self.currentTimeLb mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(weakSelf.playPauseBtn.mas_right).mas_offset(LEFT_MARGIN);
         make.centerY.mas_equalTo(weakSelf.playPauseBtn);
+        make.width.mas_equalTo(weakSelf.durationTimeLb.mas_width);
     }];
     
     [self.bufferPro mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -150,20 +163,29 @@
 }
 
 - (void)playPauseBtnClick:(UIButton *)btn{
-    GDLog(@"%@",self.player.playerProgress);
     [self.player gd_pause];
 }
 
 - (void)fullScreenBtnClick:(UIButton *)btn{
-    GDLog(@"%@",btn.currentTitle);
+    
 }
 
+- (void)tapPlaySlider:(UITapGestureRecognizer *)tap{
+    UISlider  *v =(UISlider *) tap.view;
+    CGFloat x = [tap locationInView:v].x;
+    v.value = x / v.bounds.size.width;
+    //    [self playSliderChange:v];
+    [self playSliderChangeEnd:v];
+}
+
+
 - (void)playSliderChange:(UISlider *)slider{
-    GDLog(@"%@",slider);
+    [self.player gd_pause];
+    [self.currentTimeLb setText:[NSString stringWithFormat:@"%.0f",self.player.duration * slider.value]];
 }
 
 - (void)playSliderChangeEnd:(UISlider *)slider{
-    GDLog(@"%@",slider);
+    [self.player gd_seekToProgress:slider.value];
 }
 
 

@@ -12,10 +12,6 @@
 @interface GDPlayerHandleView : UIView
 @property (nonatomic, strong) GDPlayer *player;
 
-
-
-
-
 - (instancetype)initWithPlayer:(GDPlayer *)player;
 
 @end
