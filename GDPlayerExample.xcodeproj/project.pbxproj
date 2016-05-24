@@ -15,6 +15,11 @@
 		66341E4E1CF17C6E0034D47E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66341E4C1CF17C6E0034D47E /* LaunchScreen.storyboard */; };
 		66341E591CF17C6E0034D47E /* GDPlayerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66341E581CF17C6E0034D47E /* GDPlayerExampleTests.m */; };
 		66341E641CF17C6E0034D47E /* GDPlayerExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66341E631CF17C6E0034D47E /* GDPlayerExampleUITests.m */; };
+		66341E781CF187050034D47E /* GDPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66341E771CF187050034D47E /* GDPlayer.m */; };
+		6678C2DF1CF3358E00FB5FDC /* GDConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 6678C2DE1CF3358D00FB5FDC /* GDConstant.m */; };
+		66AD19BE1CF1937D008BD0C5 /* GDPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AD19BD1CF1937D008BD0C5 /* GDPlayerView.m */; };
+		66AD19C11CF1B9A0008BD0C5 /* GDPlayerHandleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AD19C01CF1B9A0008BD0C5 /* GDPlayerHandleView.m */; };
+		DF392EF30F9AC76343957A69 /* Pods_GDPlayerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A273592B91EF4595FA27F7 /* Pods_GDPlayerExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,18 @@
 		66341E5F1CF17C6E0034D47E /* GDPlayerExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDPlayerExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66341E631CF17C6E0034D47E /* GDPlayerExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDPlayerExampleUITests.m; sourceTree = "<group>"; };
 		66341E651CF17C6E0034D47E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66341E761CF187050034D47E /* GDPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDPlayer.h; sourceTree = "<group>"; };
+		66341E771CF187050034D47E /* GDPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDPlayer.m; sourceTree = "<group>"; };
+		6678C2DD1CF3358D00FB5FDC /* GDConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDConstant.h; sourceTree = "<group>"; };
+		6678C2DE1CF3358D00FB5FDC /* GDConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDConstant.m; sourceTree = "<group>"; };
+		6678C2E01CF3450300FB5FDC /* GDDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDDefine.h; sourceTree = "<group>"; };
+		66AD19BC1CF1937D008BD0C5 /* GDPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDPlayerView.h; sourceTree = "<group>"; };
+		66AD19BD1CF1937D008BD0C5 /* GDPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDPlayerView.m; sourceTree = "<group>"; };
+		66AD19BF1CF1B9A0008BD0C5 /* GDPlayerHandleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDPlayerHandleView.h; sourceTree = "<group>"; };
+		66AD19C01CF1B9A0008BD0C5 /* GDPlayerHandleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDPlayerHandleView.m; sourceTree = "<group>"; };
+		84A273592B91EF4595FA27F7 /* Pods_GDPlayerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDPlayerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D81B924F75C0E91D66E4ED84 /* Pods-GDPlayerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDPlayerExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GDPlayerExample/Pods-GDPlayerExample.debug.xcconfig"; sourceTree = "<group>"; };
+		F61AACAD19428B8A73406FC3 /* Pods-GDPlayerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDPlayerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-GDPlayerExample/Pods-GDPlayerExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF392EF30F9AC76343957A69 /* Pods_GDPlayerExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +103,8 @@
 				66341E571CF17C6E0034D47E /* GDPlayerExampleTests */,
 				66341E621CF17C6E0034D47E /* GDPlayerExampleUITests */,
 				66341E3C1CF17C6E0034D47E /* Products */,
+				70C287848FFE7BE4314553DD /* Pods */,
+				76F47DE21709E6396B458FA7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,7 +121,7 @@
 		66341E3D1CF17C6E0034D47E /* GDPlayerExample */ = {
 			isa = PBXGroup;
 			children = (
-				66341E711CF17D0E0034D47E /* GDPlayer */,
+				66341E751CF187050034D47E /* GDPlayer */,
 				66341E411CF17C6E0034D47E /* AppDelegate.h */,
 				66341E421CF17C6E0034D47E /* AppDelegate.m */,
 				66341E441CF17C6E0034D47E /* ViewController.h */,
@@ -141,11 +161,37 @@
 			path = GDPlayerExampleUITests;
 			sourceTree = "<group>";
 		};
-		66341E711CF17D0E0034D47E /* GDPlayer */ = {
+		66341E751CF187050034D47E /* GDPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				66341E761CF187050034D47E /* GDPlayer.h */,
+				66341E771CF187050034D47E /* GDPlayer.m */,
+				66AD19BC1CF1937D008BD0C5 /* GDPlayerView.h */,
+				66AD19BD1CF1937D008BD0C5 /* GDPlayerView.m */,
+				66AD19BF1CF1B9A0008BD0C5 /* GDPlayerHandleView.h */,
+				66AD19C01CF1B9A0008BD0C5 /* GDPlayerHandleView.m */,
+				6678C2DD1CF3358D00FB5FDC /* GDConstant.h */,
+				6678C2DE1CF3358D00FB5FDC /* GDConstant.m */,
+				6678C2E01CF3450300FB5FDC /* GDDefine.h */,
 			);
 			path = GDPlayer;
+			sourceTree = SOURCE_ROOT;
+		};
+		70C287848FFE7BE4314553DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D81B924F75C0E91D66E4ED84 /* Pods-GDPlayerExample.debug.xcconfig */,
+				F61AACAD19428B8A73406FC3 /* Pods-GDPlayerExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		76F47DE21709E6396B458FA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84A273592B91EF4595FA27F7 /* Pods_GDPlayerExample.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,9 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66341E681CF17C6E0034D47E /* Build configuration list for PBXNativeTarget "GDPlayerExample" */;
 			buildPhases = (
+				D0264F513EC97193459BC3B7 /* 📦 Check Pods Manifest.lock */,
 				66341E371CF17C6E0034D47E /* Sources */,
 				66341E381CF17C6E0034D47E /* Frameworks */,
 				66341E391CF17C6E0034D47E /* Resources */,
+				1E4D79D5E98B86ACEA723AB4 /* 📦 Embed Pods Frameworks */,
+				BC5B76B69974D27237FB1788 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,6 +259,7 @@
 		66341E331CF17C6E0034D47E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GD;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "林广德";
 				TargetAttributes = {
@@ -273,13 +323,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E4D79D5E98B86ACEA723AB4 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GDPlayerExample/Pods-GDPlayerExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC5B76B69974D27237FB1788 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GDPlayerExample/Pods-GDPlayerExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0264F513EC97193459BC3B7 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		66341E371CF17C6E0034D47E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66AD19BE1CF1937D008BD0C5 /* GDPlayerView.m in Sources */,
 				66341E461CF17C6E0034D47E /* ViewController.m in Sources */,
+				66341E781CF187050034D47E /* GDPlayer.m in Sources */,
 				66341E431CF17C6E0034D47E /* AppDelegate.m in Sources */,
+				6678C2DF1CF3358E00FB5FDC /* GDConstant.m in Sources */,
+				66AD19C11CF1B9A0008BD0C5 /* GDPlayerHandleView.m in Sources */,
 				66341E401CF17C6E0034D47E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,9 +523,11 @@
 		};
 		66341E691CF17C6E0034D47E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D81B924F75C0E91D66E4ED84 /* Pods-GDPlayerExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GDPlayerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lingd600.GDPlayerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,9 +536,11 @@
 		};
 		66341E6A1CF17C6E0034D47E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F61AACAD19428B8A73406FC3 /* Pods-GDPlayerExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GDPlayerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lingd600.GDPlayerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
